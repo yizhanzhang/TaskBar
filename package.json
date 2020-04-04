@@ -1,7 +1,7 @@
 {
-  "name": "term-bar",
+  "name": "task-bar",
   "version": "1.0.0",
-  "description": "A TermBar",
+  "description": "A TaskBar",
   "main": "main.js",
   "author": "zane.zyz",
   "scripts": {
