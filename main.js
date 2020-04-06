@@ -1,6 +1,6 @@
-const { nativeTheme } = require('electron')
 const { menubar } = require('menubar')
 const path = require('path')
+const message = require('./message')
 require('fix-path')()
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -22,5 +22,4 @@ const mb = menubar({
   icon: path.join(__dirname, './static/', 'iconTemplate.png')
 });
 
-mb.on('after-create-window', () => {
-})
+message.init(mb.app)

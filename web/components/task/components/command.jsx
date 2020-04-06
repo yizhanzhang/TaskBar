@@ -42,8 +42,8 @@ export default function (props) {
       <div className="desc">{command.desc}</div>
     </div>
     <div className="operate">
-      <button className="run" tabindex="-1" onClick={() => { run(command) }}>运行</button>
-      <button className="del" tabindex="-1" onClick={() => { del(command) }}>删除</button>
+      <button className="run" tabIndex="-1" onClick={() => { run(command) }}>运行</button>
+      <button className="del" tabIndex="-1" onClick={() => { del(command) }}>删除</button>
     </div>
   </div>
 }
