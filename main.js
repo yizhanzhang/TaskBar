@@ -19,7 +19,7 @@ const mb = menubar({
     alwaysOnTop: isDev
   },
   preloadWindow: true,
-  icon: path.join(__dirname, './static/', nativeTheme.shouldUseDarkColors ? 'iconWhite.png' : 'iconBlack.png')
+  icon: path.join(__dirname, './static/', 'iconTemplate.png')
 });
 
 mb.on('after-create-window', () => {
