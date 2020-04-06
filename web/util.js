@@ -30,7 +30,7 @@ const userData = new class UserData {
       this._data = JSON.parse(data)
     } else {
       fs.writeFileSync(this.userFile, JSON.stringify(this._defaultData))
-      this._data = _defaultData
+      this._data = this._defaultData
     }
   }
 
