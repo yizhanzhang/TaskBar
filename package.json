@@ -2,7 +2,7 @@
   "name": "task-bar",
   "version": "1.0.0",
   "description": "A TaskBar",
-  "main": "main.js",
+  "main": "./main/main.js",
   "author": "zane.zyz",
   "scripts": {
     "web": "webpack --config ./web/webpack.config.js --watch",

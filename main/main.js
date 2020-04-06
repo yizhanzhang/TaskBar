@@ -6,7 +6,7 @@ require('fix-path')()
 const isDev = process.env.NODE_ENV === 'development'
 
 const mb = menubar({
-  index: 'file://' + path.join(__dirname, './web/index.html'),
+  index: 'file://' + path.join(__dirname, '../web/index.html'),
   browserWindow: {
     width: 320,
     height: 520,
@@ -19,7 +19,7 @@ const mb = menubar({
     alwaysOnTop: isDev
   },
   preloadWindow: true,
-  icon: path.join(__dirname, './static/', 'iconTemplate.png')
+  icon: path.join(__dirname, '../static/', 'iconTemplate.png')
 });
 
 message.init(mb.app)
