@@ -5,9 +5,10 @@
   "main": "./main/main.js",
   "author": "zane.zyz",
   "scripts": {
-    "web": "webpack --config ./web/webpack.config.js --watch",
+    "web": "webpack --config ./web/webpack.config.js",
+    "web:watch": "webpack --config ./web/webpack.config.js --watch",
     "dev": "export NODE_ENV=development && electron .",
-    "start": "electron .",
+    "dev:prod": "export NODE_ENV=development && electron .",
     "build": "electron-builder build --win --publish never",
     "deploy": "electron-builder build --win --publish always",
     "pack": "electron-builder --dir"
