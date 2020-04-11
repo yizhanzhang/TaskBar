@@ -20,7 +20,7 @@
       "icon": "static/app.icns"
     }
   },
-  "repository": "",
+  "repository": "https://github.com/zhanspace/TaskBar.git",
   "keywords": [
     "Electron",
     "termBar"
