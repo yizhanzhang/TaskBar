@@ -11,7 +11,7 @@
     "dev:prod": "export NODE_ENV=development && electron .",
     "build": "electron-builder build --win --publish never",
     "deploy": "electron-builder build --win --publish always",
-    "pack": "electron-builder --dir"
+    "pack": "node ./tasks/pack.js"
   },
   "build": {
     "appId": "com.wizards.ElectronAutoUpdate",
@@ -33,9 +33,12 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "@types/react-dom": "^16.9.6",
     "antd": "^4.1.0",
+    "archiver": "^3.1.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
+    "chalk": "^4.0.0",
     "css-loader": "^2.1.1",
     "electron": "^7.1.1",
     "electron-builder": "^22.1.0",
@@ -49,6 +52,11 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "style-loader": "^0.23.1",
+    "ts-loader": "^5.3.3",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "tslint": "^6.0.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.3.3333",
     "url-loader": "^0.5.7",
     "webpack": "^4.29.6",
     "webpack-bundle-analyzer": "^3.6.0",

@@ -1,23 +1,27 @@
 const path = require('path')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const config = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: [
-    path.resolve(__dirname, 'index.jsx')
+    path.resolve(__dirname, 'src/index.tsx')
   ],
   resolve: {
     modules: ['node_modules'],
-    extensions: ['.jsx', '.js', '.less'],
-    alias: {
-      '~': path.resolve(__dirname, '.')
-    }
+    extensions: ['.ts', '.tsx', '.js', '.less'],
+    plugins: [new TsconfigPathsPlugin({ configFile: path.resolve(__dirname, "./tsconfig.json")})]
   },
   output: {
-    path: path.join(__dirname, './'),
+    path: path.join(__dirname, '../static'),
     filename: 'app.js'
   },
   module: {
     rules: [
+      {
+        test: /\.(ts|tsx)?$/,
+        exclude: /node_modules/,
+        use: 'ts-loader',
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,

@@ -6,7 +6,7 @@ require('fix-path')()
 const isDev = process.env.NODE_ENV === 'development'
 
 const mb = menubar({
-  index: 'file://' + path.join(__dirname, '../web/index.html'),
+  index: 'file://' + path.join(__dirname, '../static/index.html'),
   browserWindow: {
     width: 320,
     height: 520,

@@ -9,6 +9,7 @@ ipc.on('utilMessage', function (event, arg) {
   }
 
   let result
+  // 按照arg配置对应的处理函数
   if (arg === 'userData') {
     result = globalApp.getPath('userData')
   }
