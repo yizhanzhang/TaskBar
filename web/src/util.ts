@@ -17,13 +17,11 @@ const userData = new class UserData {
 		{ name: 'code', desc: 'open vscode project', args: true, method: 'mysh code' },
 		{ name: 'syncGameIDE', desc: '统一切换git分支', args: true, method: 'mysh syncGameIDE' },
 	]
+	private userPath = ipc.sendSync('utilMessage', 'userData')
+	private userFilePath = path.join(this.userPath, './userData.json')
 	private _data = this.initData()
-	private userPath: string = ''
-	private userFilePath: string = ''
 
 	initData() {
-		this.userPath = ipc.sendSync('utilMessage', 'userData')
-		this.userFilePath = path.join(this.userPath, './userData.json')
 		if (fs.existsSync(this.userFilePath)) {
 			const data = fs.readFileSync(this.userFilePath, 'utf-8')
 			return JSON.parse(data)
@@ -32,11 +30,12 @@ const userData = new class UserData {
 		return this._defaultData
 	}
 
-	getData() {
+	getData = () => {
 		return this._data
 	}
 
-	writeData(value: Array<ICommand>) {
+	writeData = (value: Array<ICommand>) => {
+		console.log(this)
 		fs.writeFileSync(this.userFilePath, JSON.stringify(value))
 	}
 }()
