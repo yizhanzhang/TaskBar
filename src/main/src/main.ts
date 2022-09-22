@@ -6,8 +6,8 @@ import { initMessage } from './message'
 const mb = menubar({
   index: 'file://' + path.join(__dirname, '../web/index.html'),
   browserWindow: {
-    width: 320,
-    height: 520,
+    width: 300,
+    height: 370,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,

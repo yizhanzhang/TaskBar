@@ -6,7 +6,7 @@
   "author": "zane.zyz",
   "scripts": {
     "start:main": "electron .",
-    "watch:web": "webpack --config ./src/web/webpack.config.js",
+    "watch:web": "webpack --config ./src/web/webpack.config.js --watch",
     "build": "npm run build:main && npm run build:web && npm run build:mac && npm run build:win",
     "build:web": "webpack --config ./src/web/webpack.config.js",
     "build:main": "tsc -p ./src/main/tsconfig.json",
