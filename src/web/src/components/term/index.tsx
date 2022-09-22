@@ -12,6 +12,9 @@ export default class Term extends React.Component {
 	}
 
 	componentDidMount() {
+		emitter.on('clear', () => {
+			this.setState({ logs: [] })
+		})
 		emitter.on('stdout', (data: string) => {
 			const formatedData = data.replace('\n', '\r\n')
 			this.state.logs.unshift(formatedData)

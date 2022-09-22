@@ -24,6 +24,7 @@ export default function (props: IProps) {
 		}
 
 		// run and listen std
+		emitter.emit('clear')
 		const childP = exec(method)
 		childP.stdout!.on('data', (data: string) => {
 			emitter.emit('stdout', data)
