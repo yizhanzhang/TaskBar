@@ -21,5 +21,9 @@ const mb = menubar({
   icon: path.join(__dirname, '../../static/', 'iconTemplate.png')
 });
 
+mb.on('after-create-window', () => {
+  mb.app.dock.hide()
+})
+
 fixPath()
-initMessage(mb.app)
+initMessage(mb.app);
