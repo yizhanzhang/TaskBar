@@ -1,18 +1,23 @@
-import React, { KeyboardEvent } from 'react'
-import { emitter, exec } from '~/util'
+import { KeyboardEvent } from 'react'
+import { emitter, exec } from '../../../util'
 
-export default function (props) {
-	const { command, del } = props
-	const refs = {}
+interface IProps {
+	command: ICommand,
+	del: Function,
+	lineColor: string,
+}
+
+export default function (props: IProps) {
+	const { command, del, lineColor } = props
+	const refs: { [key: string]: HTMLInputElement } = {}
 
 	const inputKeyDown = (e: KeyboardEvent<HTMLInputElement>, command: ICommand) => {
-		if (e.keyCode === 13) run(command)
+		if (e.key === 'Enter') run(command)
 	}
 
 	const run = (command: ICommand) => {
-		// get exec mrthod
+		// get exec method
 		let method = command.method
-		console.log(refs)
 		if (command.args === true) {
 			const value = refs[`input_${command.name}`].value
 			method += ` ${value}`
@@ -20,10 +25,10 @@ export default function (props) {
 
 		// run and listen std
 		const childP = exec(method)
-		childP.stdout.on('data', (data: string) => {
+		childP.stdout!.on('data', (data: string) => {
 			emitter.emit('stdout', data)
 		})
-		childP.stderr.on('data', (data: string) => {
+		childP.stderr!.on('data', (data: string) => {
 			emitter.emit('stdout', data)
 		})
 
@@ -31,13 +36,13 @@ export default function (props) {
 		refs[`input_${command.name}`].value = ''
 	}
 
-	return <div className="command" style={{ borderLeft: `5px solid ${props.lineColor}` }}>
+	return <div className="command" style={{ borderLeft: `5px solid ${lineColor}` }}>
 		<div className="info">
 			<div className="name">
 				<span>{command.name}</span>
 				{command.args && <input
 					className="input"
-					ref={(inst) => { refs[`input_${command.name}`] = inst }}
+					ref={(inst) => { refs[`input_${command.name}`] = inst as HTMLInputElement }}
 					onKeyDown={(e) => { inputKeyDown(e, command) }}/>}
 			</div>
 			<div className="desc">{command.desc}</div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { emitter } from '~/util'
+import { emitter } from '../../util'
 
 export default class Term extends React.Component {
 	state = {

@@ -1,7 +1,6 @@
-import React from 'react'
 import ReactDOM from 'react-dom'
-import Task from './components/task'
-import Term from './components/term'
+import Task from './components/task/index'
+import Term from './components/term/index'
 import './index.less'
 
 ReactDOM.render(

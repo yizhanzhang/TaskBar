@@ -1,7 +1,7 @@
 import React from 'react'
 import Command from './components/command'
 import Form from './components/form'
-import { userData } from '~/util'
+import { userData } from '../../util'
 
 const getLineColors = (index: number) => {
 	const colors = ['#38beb5', '#fdb42b', '#ee3884', '#1c52c7', '#74b72d']
