@@ -1,8 +1,8 @@
-import fs from 'fs'
-import path from 'path'
-import childProcess from 'child_process'
-import { EventEmitter } from 'events'
-import { ipcRenderer } from 'electron'
+const fs = window.require('fs')
+const path = window.require('path')
+const childProcess = window.require('child_process')
+const { EventEmitter } = window.require('events')
+const { ipcRenderer } = window.require('electron')
 
 const emitter = new EventEmitter()
 
