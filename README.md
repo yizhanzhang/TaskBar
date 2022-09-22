@@ -1,7 +1,6 @@
 # TaskBar
 
 This is a menuTool for mac
-![demo](./static/readme/8.png)
 
 ## why
 
