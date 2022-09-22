@@ -6,8 +6,8 @@ import { initMessage } from './message'
 const mb = menubar({
   index: 'file://' + path.join(__dirname, '../web/index.html'),
   browserWindow: {
-    width: 300,
-    height: 370,
+    width: 320,
+    height: 520,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -15,7 +15,7 @@ const mb = menubar({
     resizable: false,
     transparent: true,
     frame: false,
-    alwaysOnTop: process.env.NODE_ENV === 'development'
+    alwaysOnTop: false
   },
   preloadWindow: true,
   icon: path.join(__dirname, '../../static/', 'iconTemplate.png')
